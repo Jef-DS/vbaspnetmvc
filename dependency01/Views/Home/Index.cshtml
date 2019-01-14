@@ -1,0 +1,34 @@
+﻿@using dependency01.ViewModels
+@model ProductViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Producten</title>
+</head>
+<body>
+    <div asp-validation-summary="All"></div>
+    <form asp-controller="Home" asp-action="Index">
+        <label asp-for="NieuwProduct.Code"></label>
+        <input asp-for="NieuwProduct.Code" />
+        <label asp-for="NieuwProduct.Naam"></label>
+        <input asp-for="NieuwProduct.Naam" />
+        <label asp-for="NieuwProduct.Prijs"></label>
+        <input asp-for="NieuwProduct.Prijs" />
+        <input type="submit" value="Toevoegen"/>
+    </form>
+    @if(Model.Repository != null && Model.Repository.Count() > 0)
+    {
+        <table>
+            <thead>
+                <tr><th>Code</th><th>Naam</th><th>Prijs</th></tr>
+            </thead>
+            <tbody>
+                @foreach(var p in @Model.Repository){
+                    <tr><td>@p.Code</td><td>@p.Naam</td><td>@p.Prijs.ToString("C")</td></tr>
+                }
+            </tbody>
+        </table>
+    }
+</body>
+</html>

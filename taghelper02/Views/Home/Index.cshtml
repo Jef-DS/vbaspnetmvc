@@ -1,0 +1,19 @@
+﻿
+@model RekenMachine
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rekenmachine</title>
+</head>
+<body>
+    <form asp-action="Index" asp-controller="Home">
+        <label asp-for="Getal1"></label><input asp-for="Getal1" />
+        <select asp-for="Bewerking" asp-items="Html.GetEnumSelectList<Bewerkingen>()">
+            <option selected disabled value="">Kies een bewerking</option>
+        </select>
+        <label asp-for="Getal2"></label><input asp-for="Getal2" asp-format="{0:N2}" />
+        <input type="submit" value="Bereken" />
+    </form>
+
+</body>
+</html>

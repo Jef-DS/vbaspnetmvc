@@ -1,0 +1,19 @@
+﻿@using taghelper01.ViewModels
+@model ReisViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head><title>Op reis</title></head>
+<body>
+    <form method="post" asp-controller="Home" asp-action="Index">
+        <label for="AantalDagen">Aantal Dagen</label>
+        <input asp-for="AantalDagen" /> naar
+        <select asp-for="BestemmingCode" asp-items="Model.Bestemmingen">
+        </select>
+        <label for="MetKorting">
+            <input asp-for="MetKorting" /> met korting
+        </label>
+        <input type="submit" value="Verzenden"/>
+    </form>
+</body>
+</html>

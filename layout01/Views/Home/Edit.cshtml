@@ -1,0 +1,14 @@
+﻿@{ 
+    Layout = "_Layout";
+}
+@model String
+<form asp-action="Add">
+    <label>Nieuwe naam: <input id="naam" name="naam" type="text" /> </label>
+    <input type="submit" value="Toevoegen" />
+</form>
+<ul>
+    @foreach(String naam in ViewBag.Lijst)
+    {
+        <li>@naam  <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@naam">Verwijder</a></li>
+    }
+</ul>

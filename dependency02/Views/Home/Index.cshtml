@@ -1,0 +1,25 @@
+﻿@using dependency02.ViewModels
+@model ProductViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Producten bestellen</title>
+</head>
+<body>
+    <form asp-controller="Home" asp-action="Index">
+        <label asp-for="ProductNaam"></label>
+        <input asp-for="ProductNaam" />
+        <input type="submit" value="Toevoegen" />
+    </form>
+    @if(Model.Producten.Length > 0)
+    {
+        <ul>
+            @foreach(var product in Model.Producten)
+            {
+                <li>@product</li>
+            }
+        </ul>
+    }
+</body>
+</html>

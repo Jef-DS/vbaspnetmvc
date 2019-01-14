@@ -1,0 +1,10 @@
+﻿@{ 
+    ViewBag.Title = "Start";
+}
+<p>We moeten ergens beginnen</p>
+<a asp-area="Identity" asp-controller="Account" asp-action="Login">Login</a>
+<a asp-controller="Blog">Naar Blogs</a>
+@if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <a asp-controller="Admin">Beheer</a>
+}

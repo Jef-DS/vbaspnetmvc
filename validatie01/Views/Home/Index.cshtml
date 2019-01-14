@@ -1,0 +1,19 @@
+﻿@model Reis
+<!DOCTYPE html>
+<html>
+<head><title>Op reis</title></head>
+<body>
+    <form asp-action="index" asp-controller="home">
+        <label asp-for="Bestemming"></label>
+        <input asp-for="Bestemming" />
+        <span asp-validation-for="Bestemming"></span>
+        <label asp-for="StartDatum"></label>
+        <input asp-for="StartDatum" />
+        <label asp-for="EindDatum"></label>
+        <input asp-for="EindDatum" />
+        <span asp-validation-for="EindDatum"></span>
+        <input type="submit" value="Verzenden"/>
+    </form>
+    <div asp-validation-summary="ModelOnly"></div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿@model Blog
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id"/>
+    <label asp-for="Title"></label>
+    <input asp-for="Title" />
+    <label asp-for="Omschrijving"></label>
+    <input asp-for="Omschrijving" />
+    <input type="submit" value="Wijzigen" />
+    <a asp-action="Index">Annuleren</a>
+</form>

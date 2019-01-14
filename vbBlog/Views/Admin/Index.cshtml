@@ -1,0 +1,20 @@
+﻿@model IEnumerable<BlogUserViewModel>
+<table>
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <td>@user.User.UserName</td>
+                @if (user.IsAdmin)
+                {
+                    <td><a asp-action="VerwijderUitAdmin" asp-route-id="@user.User.Id">Verwijder uit Admins</a></td>
+                }
+                else
+                {
+                    <td><a asp-action="VoegToeAanAdmin" asp-route-id="@user.User.Id">Voeg toe aan Admins</a></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+

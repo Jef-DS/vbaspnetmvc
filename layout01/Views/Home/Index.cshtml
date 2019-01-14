@@ -1,0 +1,11 @@
+﻿@{ 
+    Layout = "_Layout";
+}
+
+<h1>De K3 lijst</h1>
+<ul>
+    @foreach(var naam in ViewBag.Lijst)
+    {
+        <li>@naam</li>
+    }
+</ul>
