@@ -1,0 +1,51 @@
+﻿@model EFSortingPagingFIltering.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Voornaam)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Voornaam)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Achternaam)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Achternaam)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InschrijvingsDatum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InschrijvingsDatum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inschrijvingen)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr><th>Cursus</th><th>Punten</th></tr>
+                @foreach(var item in Model.Inschrijvingen)
+                {
+                    <tr>
+                        <td>@item.Cursus.Naam</td>
+                        <td>@Html.DisplayFor(m => item.Punten)</td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
